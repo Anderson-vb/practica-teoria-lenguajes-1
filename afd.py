@@ -40,7 +40,7 @@ class AFD:
                 lista_estados.remove(x)
 
         for x in range(len(lista_estados)):
-            lista_estados[x].set_nombre(x + 1)
+            lista_estados[x].set_nombre(x)
 
 
         self.estados = lista_estados

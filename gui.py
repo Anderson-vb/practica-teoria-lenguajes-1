@@ -4,11 +4,18 @@ from estado import Estado
 from afd import AFD
 
 def generar_afd():
+    # Obtenemos el valor del input
     valor = regex_input.get()
+    # Creamos estado con la expresion regular ingresada
     estado_inicial = Estado(valor)
+    # Creamos afd a partir de la expresion regular
     afd = AFD()
     afd.crear_afd(estado_inicial)
+    
     resultado.config(text = afd.mostrar_afd())
+
+def validar_string():
+    pass
 
 # Ventana principal
 ventana = Tk()
@@ -36,9 +43,19 @@ button = Button(text='Generar AFD', width=25, command=generar_afd)
 button.config(bg='springgreen', borderwidth=0, font='Monospace', highlightbackground='#001219', activebackground='black', activeforeground='white')
 button.grid(row=2, column=1, padx=20, pady=20)
 
+# Input para validar string
+validar_input = Entry(ventana)
+validar_input.config(font='Monospace', bg='#001219', fg='white')
+validar_input.grid(row=3, column=0, padx=20, pady=20)
+
+# Boton para validar string
+button = Button(text='Validar String', width=25, command=validar_string)
+button.config(bg='springgreen', borderwidth=0, font='Monospace', highlightbackground='#001219', activebackground='black', activeforeground='white')
+button.grid(row=3, column=1, padx=20, pady=20)
+
 # Label donde se mostrará el resultado
 resultado = Label(ventana, text = '', justify=LEFT)
 resultado.config(font='Monospace', fg='white', bg='#001219')
-resultado.grid(row=3, column=0, padx=20, pady=20, columnspan=2)
+resultado.grid(row=4, column=0, padx=20, pady=20, columnspan=2)
 
 ventana.mainloop()
