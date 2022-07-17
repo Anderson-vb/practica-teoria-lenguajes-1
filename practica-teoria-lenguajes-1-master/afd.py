@@ -55,6 +55,7 @@ class AFD:
             informacion = informacion + f'{x.get_nombre()}: {x.get_regex()}\n'
 
         informacion = informacion + '\n'
+        informacion = informacion + f'{x.retornar_caracteres()}\n'
 
         for x in self.get_estados():
             informacion = informacion + f'{x.retornar_transiciones()}\n'

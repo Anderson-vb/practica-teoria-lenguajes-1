@@ -30,7 +30,13 @@ class Estado:
             print(f'{x.get_caracter()} -> {x.get_estado().get_nombre()}')
 
     def retornar_transiciones(self):
-        texto = f'{self.nombre}:\n'
+        texto = f'{self.nombre}:  '
         for x in self.transiciones:
-            texto = texto + f'{x.get_caracter()} -> {x.get_estado().get_nombre()}\n'
+            texto = texto + f'{x.get_estado().get_nombre()}  '
+        return texto
+
+    def retornar_caracteres(self):
+        texto = f'      '
+        for x in self.transiciones:
+            texto = texto + f'{x.get_caracter()}   '
         return texto
